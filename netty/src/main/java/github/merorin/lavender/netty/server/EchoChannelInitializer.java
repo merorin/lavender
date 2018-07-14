@@ -15,7 +15,7 @@ import io.netty.channel.socket.SocketChannel;
  * @version 1.0
  * @since jdk 1.8
  */
-public class EchoChannelInitializer extends ChannelInitializer<SocketChannel> {
+class EchoChannelInitializer extends ChannelInitializer<SocketChannel> {
 
     /**
      * 创建共享实例
