@@ -25,6 +25,8 @@ import io.netty.util.CharsetUtil;
  *
  * {@link #channelRead(ChannelHandlerContext, Object)}
  *
+ * 这个类是用来实现业务逻辑的
+ *
  * @author guobin On date 2018/7/15.
  * @version 1.0
  * @since jdk 1.8
