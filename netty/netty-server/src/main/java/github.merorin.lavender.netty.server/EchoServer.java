@@ -33,8 +33,10 @@ public class EchoServer {
                     .channel(NioServerSocketChannel.class)
                     .localAddress(new InetSocketAddress(this.port))
                     .childHandler(new EchoServerChannelInitializer());
+            System.out.println("Binding port...");
             // 异步绑定服务器;调用sync()方法阻塞等待直到绑定完成
             ChannelFuture future = sb.bind().sync();
+            System.out.println("Started and listening...");
             // 获取Channel的CloseFuture,并阻塞当前线程直到它完成
             future.channel().closeFuture().sync();
         } finally {
@@ -48,6 +50,7 @@ public class EchoServer {
      * @throws Exception 抛出异常
      */
     public static void main(String[] args) throws Exception {
+        System.out.println("Starting server...");
         if (args.length != EXPECTED_ARGS_LENGTH) {
             System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
             return;

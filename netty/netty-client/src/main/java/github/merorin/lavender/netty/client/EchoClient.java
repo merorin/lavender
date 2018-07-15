@@ -5,6 +5,7 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.net.InetSocketAddress;
 
@@ -33,7 +34,7 @@ public class EchoClient {
         try {
             final Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(group)
-                    .channel(NioServerSocketChannel.class)
+                    .channel(NioSocketChannel.class)
                     .remoteAddress(new InetSocketAddress(this.host, this.port))
                     .handler(new EchoClientChannelInitializer());
             // 异步绑定服务器;调用sync()方法阻塞等待直到绑定完成
