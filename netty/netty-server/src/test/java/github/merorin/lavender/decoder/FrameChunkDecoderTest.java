@@ -42,7 +42,7 @@ public class FrameChunkDecoderTest {
             // 如果上面一步没有抛出异常,那么测试失败,因为我们限定最多只能读取3字节,这里读取了4字节,应该抛出异常的
             fail();
         } catch (TooLongFrameException ex) {
-            // 这个情况是我们所期望的
+            // 这个情况是我们所期望的,不用做任何事
         }
 
         // 写入剩余的3字节,并断言会产生一个有效帧
