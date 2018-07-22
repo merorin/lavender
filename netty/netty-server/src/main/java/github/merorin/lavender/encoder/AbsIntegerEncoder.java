@@ -18,7 +18,7 @@ public class AbsIntegerEncoder extends MessageToMessageEncoder<ByteBuf> {
     private static final int INT_LENGTH = 4;
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) {
         while (msg.readableBytes() >= INT_LENGTH) {
             int value = Math.abs(msg.readInt());
             out.add(value);
