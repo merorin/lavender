@@ -86,4 +86,9 @@ public class FixedLengthFrameDecoderTest {
         byteBuf.release();
     }
 
+    @Test
+    public void test() {
+        System.out.println((int) 'A');
+    }
+
 }

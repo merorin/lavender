@@ -1,0 +1,9 @@
+{
+  "clear":"lavender.airwallex.calculator.impl.ClearRpnCalculateStrategy",
+  "undo":"lavender.airwallex.calculator.impl.UndoRpnCalculateStrategy",
+  "sqrt":"lavender.airwallex.calculator.impl.SqrtRpnCalculateStrategy",
+  "+":"lavender.airwallex.calculator.impl.AddRpnCalculateStrategy",
+  "-":"lavender.airwallex.calculator.impl.SubtractRpnCalculateStrategy",
+  "*":"lavender.airwallex.calculator.impl.MultiplyRpnCalculateStrategy",
+  "/":"lavender.airwallex.calculator.impl.DivideRpnCalculateStrategy"
+}
