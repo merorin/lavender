@@ -39,10 +39,12 @@ operator <operator> (position: <pos>): insufficient parameters
 #### Deliverables
 
 • The solution submitted should include structure, source code, configuration and any tests or test code you deem necessary - no need to package class files.
-• Solve the problem in Java, C# or in a specific language that you may have been
-directed to use.
 
-• Solve the problem as though it were “production level” code. • It is not required to provide any graphical interface.
+• Solve the problem in Java, C# or in a specific language that you may have been directed to use.
+
+• Solve the problem as though it were “production level” code. 
+
+• It is not required to provide any graphical interface.
 
 In order to get around firewall issues we recommend the solution be packaged as a password protected zip file.
 
