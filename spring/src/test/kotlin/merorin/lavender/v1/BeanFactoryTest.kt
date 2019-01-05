@@ -1,4 +1,4 @@
-package merorin.lavender
+package merorin.lavender.v1
 
 import merorin.lavender.prepare.PetStoreService
 import merorin.lavender.spring.beans.BeanDefinition
