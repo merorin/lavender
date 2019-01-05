@@ -10,5 +10,7 @@ import org.junit.runners.Suite
  * @version 1.0
  */
 @RunWith(Suite::class)
-@Suite.SuiteClasses(ApplicationContextTest::class, BeanFactoryTest::class)
+@Suite.SuiteClasses(ApplicationContextTest::class,
+        BeanFactoryTest::class,
+        ResourceTest::class)
 class V1AllTest
