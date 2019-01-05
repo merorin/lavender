@@ -2,8 +2,8 @@ package merorin.lavender
 
 import merorin.lavender.prepare.PetStoreService
 import merorin.lavender.spring.beans.BeanDefinition
-import merorin.lavender.spring.beans.factory.BeanFactory
 import merorin.lavender.spring.beans.factory.support.DefaultBeanFactory
+import merorin.lavender.spring.beans.factory.xml.XmlBeanDefinitionReader
 import merorin.lavender.spring.exception.BeanCreationException
 import merorin.lavender.spring.exception.BeanDefinitionStoreException
 import org.junit.Assert.*
@@ -18,15 +18,18 @@ import org.junit.Test
  */
 class BeanFactoryTest {
 
-    private lateinit var beanFactory : BeanFactory
+    private lateinit var beanFactory : DefaultBeanFactory
+    private lateinit var reader : XmlBeanDefinitionReader
 
     @Before
     fun setUp() {
-        beanFactory = DefaultBeanFactory("petstore_v1.xml")
+        beanFactory = DefaultBeanFactory()
+        reader = XmlBeanDefinitionReader(beanFactory)
     }
 
     @Test
     fun testGetBean() {
+        reader.loadBeanDefinition("petstore_v1.xml")
         val beanDefinition : BeanDefinition = beanFactory.getBeanDefinition("petStore")
 
         assertEquals("merorin.lavender.prepare.PetStoreServiceImpl", beanDefinition.getBeanClassName())
@@ -38,6 +41,7 @@ class BeanFactoryTest {
 
     @Test
     fun testInvalidBean() {
+        reader.loadBeanDefinition("petstore_v1.xml")
         try {
             beanFactory.getBean("invalidBean")
         } catch (e : BeanCreationException) {
@@ -49,7 +53,7 @@ class BeanFactoryTest {
     @Test
     fun testInvalidXml() {
         try {
-            DefaultBeanFactory("xxxxxx.xml")
+            reader.loadBeanDefinition("xxxxxx.xml")
         } catch (e : BeanDefinitionStoreException) {
             return
         }
