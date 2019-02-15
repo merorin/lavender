@@ -19,8 +19,8 @@ public final class SimpleDispatcher implements Dispatcher {
     }
 
     @Override
-    public void registerEventHandler(EventType type, EventHandler eventHandler) {
-        this.eventTypeEventHandlerMap.put(type, eventHandler);
+    public void registerEventHandler(EventHandler eventHandler) {
+        this.eventTypeEventHandlerMap.put(eventHandler.getType(), eventHandler);
     }
 
     @Override
