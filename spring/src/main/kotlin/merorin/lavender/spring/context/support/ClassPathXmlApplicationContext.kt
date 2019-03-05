@@ -1,5 +1,7 @@
 package merorin.lavender.spring.context.support
 
+import merorin.lavender.spring.beans.factory.BeanFactory
+import merorin.lavender.spring.beans.factory.support.BeanDefinitionRegistry
 import merorin.lavender.spring.beans.factory.support.DefaultBeanFactory
 import merorin.lavender.spring.beans.factory.xml.XmlBeanDefinitionReader
 import merorin.lavender.spring.context.ApplicationContext
@@ -12,8 +14,8 @@ import merorin.lavender.spring.context.ApplicationContext
  */
 class ClassPathXmlApplicationContext(configPath: String) : ApplicationContext {
 
-    private val factory : DefaultBeanFactory = DefaultBeanFactory()
-    private val reader : XmlBeanDefinitionReader = XmlBeanDefinitionReader(factory)
+    private val factory : BeanFactory = DefaultBeanFactory()
+    private val reader : XmlBeanDefinitionReader = XmlBeanDefinitionReader(factory as BeanDefinitionRegistry)
 
     init {
         reader.loadBeanDefinition(configPath)
