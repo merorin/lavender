@@ -1,10 +1,10 @@
-package levander.merorin.dp.rpg.character
+package lavender.merorin.dp.rpg.character
 
 /**
  * @author bin.guo
  * On 2019-03-12
  */
-class Troll : BaseCharacter() {
+class Knight : BaseCharacter() {
 
     override fun fight() {
         print("Knight is ")

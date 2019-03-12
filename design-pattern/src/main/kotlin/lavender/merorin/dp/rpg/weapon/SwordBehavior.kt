@@ -1,4 +1,4 @@
-package levander.merorin.dp.rpg.weapon
+package lavender.merorin.dp.rpg.weapon
 
 /**
  * @author bin.guo

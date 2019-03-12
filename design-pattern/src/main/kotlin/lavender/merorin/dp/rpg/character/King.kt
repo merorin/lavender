@@ -1,13 +1,13 @@
-package levander.merorin.dp.rpg.character
+package lavender.merorin.dp.rpg.character
 
 /**
  * @author bin.guo
  * On 2019-03-12
  */
-class Queen : BaseCharacter() {
+class King : BaseCharacter() {
 
     override fun fight() {
-        print("Queen is ......")
+        print("King is ......")
         this.weaponBehavior.useWeapon()
     }
 }

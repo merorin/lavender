@@ -1,6 +1,6 @@
-package levander.merorin.dp.rpg.character
+package lavender.merorin.dp.rpg.character
 
-import levander.merorin.dp.rpg.weapon.WeaponBehavior
+import lavender.merorin.dp.rpg.weapon.WeaponBehavior
 
 /**
  * @author bin.guo
