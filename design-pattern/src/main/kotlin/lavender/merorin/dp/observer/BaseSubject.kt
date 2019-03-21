@@ -11,6 +11,8 @@ abstract class BaseSubject<T> : Subject<T> {
 
     private val observers : MutableList<Observer> = ArrayList()
 
+    @Volatile private var changed : Boolean = false
+
     override fun registerObserver(observer: Observer) {
         this.observers.add(observer)
     }
@@ -20,6 +22,9 @@ abstract class BaseSubject<T> : Subject<T> {
     }
 
     override fun notifyObservers() {
+        if (!changed) {
+            return
+        }
         this.data?.let {
             this.observers.forEach { observer ->
                 @Suppress("UNCHECKED_CAST")
@@ -28,6 +33,9 @@ abstract class BaseSubject<T> : Subject<T> {
         }?: throw IllegalStateException("Data must be provided before notifying observers!")
     }
 
+    override fun setChanged() {
+        changed = true
+    }
 
     override fun getData() : T {
         return this.data?: throw IllegalStateException("Data must be provided!")

@@ -11,6 +11,7 @@ class WeatherDataSubject : BaseSubject<WeatherData>() {
 
     fun measurementsChanged(data : WeatherData) {
         this.setData(data)
+        this.setChanged()
         this.notifyObservers()
     }
 
