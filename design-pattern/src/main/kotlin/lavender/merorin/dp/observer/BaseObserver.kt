@@ -17,7 +17,4 @@ abstract class BaseObserver : Observer {
 
     protected abstract fun doNotify(subject: Subject<Any>)
 
-    protected fun doWithSubject(name: String, consumer: (Subject<Any>) -> Unit) {
-        consumer(subjects[name]?: throw IllegalStateException("Subject not found!"))
-    }
 }
