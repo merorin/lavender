@@ -33,7 +33,7 @@ abstract class BaseSubject<T> : Subject<T> {
         }?: throw IllegalStateException("Data must be provided before notifying observers!")
     }
 
-    override fun setChanged() {
+    protected fun setChanged() {
         changed = true
     }
 

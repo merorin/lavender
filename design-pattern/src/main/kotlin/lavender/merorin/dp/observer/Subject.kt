@@ -12,8 +12,6 @@ interface Subject<T> {
 
     fun notifyObservers()
 
-    fun setChanged()
-
     fun getData() : T
 
     fun getName() : String
